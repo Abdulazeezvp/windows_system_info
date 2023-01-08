@@ -1,6 +1,10 @@
 name: windows_system_info
 description: A Flutter package for getting exclusive details of windows device.
-version: 0.0.1
+version: 0.0.2
+repository: https://github.com/Abdulazeezvp/windows_system_info
+
+platforms:
+  windows:
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
