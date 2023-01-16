@@ -1,5 +1,6 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+/// display related information of device
 class Display extends WindowsSystemInformation {
   @override
   List<Object?> get props => [
@@ -19,22 +20,6 @@ class Display extends WindowsSystemInformation {
         vendor,
       ];
 
-  ///Example:
-  ///  builtin: true
-  /// connection: "INTERNAL"
-  /// currentResX: 1440
-  /// currentResY: 900
-  /// main: false
-  /// model: "Generic PnP Monitor"
-  /// pixeldepth: "32"
-  /// positionX: 1920
-  /// positionY: 290
-  /// resolutionx: 1440
-  /// resolutiony: 900
-  /// sizex: 30
-  /// sizey: 19
-  /// vendor: "(Standard monitor types)"
-
   final bool builtin;
   final String connection;
   final int currentResX;
@@ -50,6 +35,36 @@ class Display extends WindowsSystemInformation {
   final int sizey;
   final String vendor;
 
+  ///Example:
+  ///
+  ///  builtin: true
+  ///
+  /// connection: "INTERNAL"
+  ///
+  /// currentResX: 1440
+  ///
+  /// currentResY: 900
+  ///
+  /// main: false
+  ///
+  /// model: "Generic PnP Monitor"
+  ///
+  /// pixeldepth: "32"
+  ///
+  /// positionX: 1920
+  ///
+  /// positionY: 290
+  ///
+  /// resolutionx: 1440
+  ///
+  /// resolutiony: 900
+  ///
+  /// sizex: 30
+  ///
+  /// sizey: 19
+  ///
+  /// vendor: "(Standard monitor types)"
+  ///
   Display({
     required this.builtin,
     required this.connection,
@@ -67,8 +82,9 @@ class Display extends WindowsSystemInformation {
     required this.vendor,
   });
 
-  ///pass only display data as map
+  /// convert from json return List if Display
   static List<Display> fromJson(Map<String, dynamic> json) {
+    //pass only display data as map
     List<Display> displayList = [];
     for (var i = 0; i < json.length; i++) {
       Display display = Display(

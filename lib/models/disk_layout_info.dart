@@ -1,5 +1,6 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+/// disk layout infor of windows system, gives information like hdds,ssd attached to device
 class DiskLayoutInfo extends WindowsSystemInformation {
   @override
   List<Object?> get props => [
@@ -20,23 +21,6 @@ class DiskLayoutInfo extends WindowsSystemInformation {
         type,
       ];
 
-  /// example values::
-  /// bytesPerSector: 512
-  /// device: ""
-  /// firmwareRevision: ""
-  /// interfaceType: "RAID"
-  /// name: ""
-  /// sectorsPerTrack: 63
-  /// serialNum: ""
-  /// size: 240054796800
-  /// smartStatus: "Ok"
-  /// totalCylinders: 29185
-  /// totalHeads: 255
-  /// totalSectors: 468857025
-  /// totalTracks: 7442175
-  /// tracksPerCylinder: 255
-  /// type: "SSD"
-
   final int bytesPerSector;
   final String device;
   final String firmwareRevision;
@@ -53,6 +37,38 @@ class DiskLayoutInfo extends WindowsSystemInformation {
   final int tracksPerCylinder;
   final String type;
 
+  /// example values::
+  ///
+  /// bytesPerSector: 512
+  ///
+  /// device: ""
+  ///
+  /// firmwareRevision: ""
+  ///
+  /// interfaceType: "RAID"
+  ///
+  /// name: ""
+  ///
+  /// sectorsPerTrack: 63
+  ///
+  /// serialNum: ""
+  ///
+  /// size: 240054796800
+  ///
+  /// smartStatus: "Ok"
+  ///
+  /// totalCylinders: 29185
+  ///
+  /// totalHeads: 255
+  ///
+  /// totalSectors: 468857025
+  ///
+  /// totalTracks: 7442175
+  ///
+  /// tracksPerCylinder: 255
+  ///
+  /// type: "SSD"
+  ///
   DiskLayoutInfo({
     required this.bytesPerSector,
     required this.device,
@@ -70,7 +86,8 @@ class DiskLayoutInfo extends WindowsSystemInformation {
     required this.tracksPerCylinder,
     required this.type,
   });
-
+  
+  /// convert from json return list of DiskLayoutInfo
   static List<DiskLayoutInfo> fromJson(Map<String, dynamic> json) {
     Map<String, dynamic> diskLayoutData = json['disklayout'] ?? {};
     List<DiskLayoutInfo> diskLayoutList = [];

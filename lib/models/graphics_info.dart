@@ -2,6 +2,7 @@ import 'package:windows_system_info/models/gpu_controller.dart';
 import 'package:windows_system_info/models/gpu_displays.dart';
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+/// Graphics related information of device
 class GraphicsInfo extends WindowsSystemInformation {
   @override
   List<Object?> get props => [controllers, displays];
@@ -13,6 +14,7 @@ class GraphicsInfo extends WindowsSystemInformation {
     required this.displays,
   });
 
+  ///convert from json return GraphicsInfo
   static GraphicsInfo fromJson(Map<String, dynamic> json) {
     return GraphicsInfo(
       controllers:

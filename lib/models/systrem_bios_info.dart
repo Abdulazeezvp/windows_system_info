@@ -1,10 +1,7 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+///bios information of system
 class BiosInfo extends WindowsSystemInformation {
-  ///bios information of system
-  /// releaseDate: "2011-02-15"
-  /// vendor: "Dell Inc."
-  /// version: "DELL - 000000"
   @override
   List<Object?> get props => [
         releaseDate,
@@ -15,6 +12,12 @@ class BiosInfo extends WindowsSystemInformation {
   final String vendor;
   final String version;
 
+  /// releaseDate: "2011-02-15"
+  ///
+  /// vendor: "Dell Inc."
+  ///
+  /// version: "DELL - 000000"
+  ///
   BiosInfo({
     required this.releaseDate,
     required this.vendor,
@@ -44,6 +47,7 @@ class BiosInfo extends WindowsSystemInformation {
     return '';
   }
 
+  /// to json(Map<String,dynamic>) of model
   Map<String, dynamic> toJson() {
     return {
       'releaseDate': releaseDate,

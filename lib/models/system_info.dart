@@ -1,13 +1,7 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+///model for windows system information like manufacturer,model, seriel,uuid etc...
 class SystemInfo extends WindowsSystemInformation {
-  ///model for windows system information like manufacturer,model, seriel,uuid etc...
-  /// String manufacturer: "Dell ."
-  /// String model: "Modelname Model Number"
-  /// String serial: "unique value"
-  /// String sku: ""
-  /// String uuid: ""
-  /// String version: "0001"
   //must add new properties inside props!!!
   @override
   List<Object?> get props => [
@@ -26,6 +20,18 @@ class SystemInfo extends WindowsSystemInformation {
   final String uuid;
   final String version;
 
+  /// String manufacturer: "Dell ."
+  ///
+  /// String model: "Modelname Model Number"
+  ///
+  /// String serial: "unique value"
+  ///
+  /// String sku: ""
+  ///
+  /// String uuid: ""
+  ///
+  /// String version: "0001"
+  ///
   SystemInfo({
     required this.manufacturer,
     required this.model,
@@ -67,8 +73,8 @@ class SystemInfo extends WindowsSystemInformation {
     );
   }
 
+  /// to json(Map<String,dynamic>) of model
   Map<String, dynamic> toJson() {
-    /// to json(Map<String,dynamic>) of model
     return {
       'manufacturer': manufacturer,
       'model': model,

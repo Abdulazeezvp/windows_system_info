@@ -10,6 +10,7 @@ import 'package:windows_system_info/models/system_os_info.dart';
 import 'package:windows_system_info/models/systrem_bios_info.dart';
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+/// all information about windows system includes static and non static values
 class AllInfo extends WindowsSystemInformation {
   @override
   List<Object?> get props => [
@@ -36,6 +37,27 @@ class AllInfo extends WindowsSystemInformation {
   final List<MemoryInfo> memories;
   final GraphicsInfo graphicsInfo;
 
+  /// {system,
+  ///
+  ///  bios,
+  ///
+  ///  baseBoard,
+  ///
+  ///  chassis,
+  ///
+  ///  os,
+  ///
+  ///  cpu,
+  ///
+  ///  network,
+  ///
+  ///  disks,
+  ///
+  ///  memories,
+  ///
+  ///  graphicsInfo
+  ///
+  /// }
   AllInfo({
     required this.system,
     required this.bios,
@@ -49,6 +71,7 @@ class AllInfo extends WindowsSystemInformation {
     required this.graphicsInfo,
   });
 
+  /// convert from json
   static AllInfo fromJson(Map<String, dynamic> json) {
     return AllInfo(
       system: SystemInfo.fromJson(json),

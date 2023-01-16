@@ -1,5 +1,6 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+/// network related information fo device
 class NetworkInfo extends WindowsSystemInformation {
   @override
   List<Object?> get props => [
@@ -11,13 +12,6 @@ class NetworkInfo extends WindowsSystemInformation {
         virtual,
       ];
 
-  /// manufactruer
-  /// iface: "vEthernet (WSL)"
-  /// ifaceName: "Hyper-V Virtual Ethernet Adapter"
-  /// mac: "00:00:00:a0:00:d0"
-  /// type: "wired"
-  /// virtual: true
-
   final String manufactruer;
   final String iface;
   final String ifaceName;
@@ -25,6 +19,18 @@ class NetworkInfo extends WindowsSystemInformation {
   final String type;
   final bool virtual;
 
+  /// manufactruer
+  ///
+  /// iface: "vEthernet (WSL)"
+  ///
+  /// ifaceName: "Hyper-V Virtual Ethernet Adapter"
+  ///
+  /// mac: "00:00:00:a0:00:d0"
+  ///
+  /// type: "wired"
+  ///
+  /// virtual: true
+  ///
   NetworkInfo({
     required this.manufactruer,
     required this.iface,
@@ -34,6 +40,7 @@ class NetworkInfo extends WindowsSystemInformation {
     required this.virtual,
   });
 
+  /// convert from json return List of NetworkInfo
   static List<NetworkInfo> fromJson(Map<String, dynamic> json) {
     Map<String, dynamic> network = json['net'] ?? {};
     List<NetworkInfo> networkList = [];

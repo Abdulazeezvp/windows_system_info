@@ -1,6 +1,10 @@
 import 'package:windows_system_info/models/all_info.dart';
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+/// model for static information of device, assuming this information
+/// will not change without replacing or resetting pc.
+/// windows versions like 10, 11 may be change if new product purchased and upgraded
+///
 class DeviceStaticinfo extends WindowsSystemInformation {
   @override
   List<Object?> get props => [
@@ -36,9 +40,6 @@ class DeviceStaticinfo extends WindowsSystemInformation {
         cpuSocket,
       ];
 
-  ///model for static information of device, assuming this information
-  ///will not change without replacing or resetting pc.
-
   final String systemManufacturer;
   final String systemModel;
   final String systemSerial;
@@ -70,6 +71,70 @@ class DeviceStaticinfo extends WindowsSystemInformation {
   final String cpuVendor;
   final String cpuSocket;
 
+  /// (s)-> will not change, (ns)->may be chnage
+  /// {
+  ///  systemManufacturer : device Manufacturer (s),
+  ///
+  ///  systemModel : model name of device(s),
+  ///
+  ///  systemSerial : serial number (s),
+  ///
+  ///  systemUuid : device uuid (s),
+  ///
+  ///  biosVendor : bios vendor (s),
+  ///
+  ///  biosVersion : bios version (ns),
+  ///
+  ///  biosReleaseDate : bios release date(s),
+  ///
+  ///  baseboardManufacturer : base board or motherboard manufacturer (s),
+  ///
+  ///  baseboardModel : base board model(s),
+  ///
+  ///  baseboardSerial : base board serial number (s),
+  ///
+  ///  chassisManufacturer : chassis manufacturer(s),
+  ///
+  ///  chassisModel : chassis model(s),
+  ///
+  ///  chassisType : chassis type(s)//laptop,desktop, notebook,
+  ///
+  ///  chassisSerial: chassis serial(s),
+  ///
+  ///  osPlatform : os(ns) win11, win 10,
+  ///
+  ///  osDistro : os distribution(s),
+  ///
+  ///  osRelease: os release date(s),
+  ///
+  ///  osArch: arch 64/32(s),
+  ///
+  ///  osHostname: name of device(ns),
+  ///
+  ///  osBuild: build version of device(s),
+  ///
+  ///  osKernal: not applicable for windows,
+  ///
+  ///  osSerial: os serial(s),
+  ///
+  ///  uuidOs: os uuid (s),
+  ///
+  ///  cpuManufacturer : cpu manufacturer(s),
+  ///
+  ///  cpuBrand : cpu brand(s),
+  ///
+  ///  cpuSpeed : cpu speed(s),
+  ///
+  ///  cpuCores:  cpu cores(s),
+  ///
+  ///  cpuPhysicalCores : cpu cores(s),
+  ///
+  ///  cpuVendor : cpu vendor(s),
+  ///
+  ///  cpuSocket : cpu socket(s),
+  ///
+  /// }
+  ///
   DeviceStaticinfo({
     required this.systemManufacturer,
     required this.systemModel,
@@ -103,6 +168,7 @@ class DeviceStaticinfo extends WindowsSystemInformation {
     required this.cpuSocket,
   });
 
+  ///convert from all info
   static DeviceStaticinfo fromAllInfo(AllInfo allInfo) {
     return DeviceStaticinfo(
       systemManufacturer: allInfo.system.manufacturer,

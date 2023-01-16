@@ -1,5 +1,6 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+///device memory related information of device
 class MemoryInfo extends WindowsSystemInformation {
   @override
   List<Object?> get props => [
@@ -16,18 +17,6 @@ class MemoryInfo extends WindowsSystemInformation {
         voltageMin,
       ];
 
-  /// bank: "BANK 0"
-  /// clockSpeed: 0
-  /// formFactor: "SODIMM"
-  /// manufacturer: "80AD"
-  /// partNum: "XXXXXXXXXX-PB"
-  /// serialNum: "0F421A69"
-  /// size: 4294967296
-  /// type: "DDR3"
-  /// voltageConfigured: 0
-  /// voltageMax: 0
-  /// voltageMin: 0
-
   final String bank;
   final int clockSpeed;
   final String formFactor;
@@ -40,6 +29,30 @@ class MemoryInfo extends WindowsSystemInformation {
   final int voltageMax;
   final int voltageMin;
 
+  /// Example:
+  /// 
+  /// bank: "BANK 0"
+  /// 
+  /// clockSpeed: 0
+  /// 
+  /// formFactor: "SODIMM"
+  /// 
+  /// manufacturer: "80AD"
+  /// 
+  /// partNum: "XXXXXXXXXX-PB"
+  /// 
+  /// serialNum: "0F421A69"
+  /// 
+  /// size: 4294967296
+  /// 
+  /// type: "DDR3"
+  /// 
+  /// voltageConfigured: 0
+  /// 
+  /// voltageMax: 0
+  /// 
+  /// voltageMin: 0
+  /// 
   MemoryInfo({
     required this.bank,
     required this.clockSpeed,
@@ -53,6 +66,8 @@ class MemoryInfo extends WindowsSystemInformation {
     required this.voltageMax,
     required this.voltageMin,
   });
+
+  ///convert from json return List of MemoryInfo
   static List<MemoryInfo> fromJson(Map<String, dynamic> json) {
     Map<String, dynamic> memory = json['memlayout'] ?? {};
     List<MemoryInfo> memoryList = [];

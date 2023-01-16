@@ -1,5 +1,6 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+/// windows os information
 class OsInfo extends WindowsSystemInformation {
   @override
   List<Object?> get props => [
@@ -11,18 +12,22 @@ class OsInfo extends WindowsSystemInformation {
         uuid,
       ];
 
-  /// arch: "64-bit"
-  /// build: "19043"
-  /// distro: "Microsoft Windows 10 Home"
-  /// hostname: "DESKTOP-ABCDEFG"
-  /// serial: "xxxxx-xxxxx-xxxxx-xxxxx"
-
   final String arch;
   final String build;
   final String distro;
   final String hostname;
   final String serial;
   final String uuid;
+
+  /// arch: "64-bit"
+  ///
+  /// build: "19043"
+  ///
+  /// distro: "Microsoft Windows 10 Home"
+  ///
+  /// hostname: "DESKTOP-ABCDEFG"
+  ///
+  /// serial: "xxxxx-xxxxx-xxxxx-xxxxx"
   OsInfo({
     required this.arch,
     required this.build,
@@ -60,6 +65,7 @@ class OsInfo extends WindowsSystemInformation {
             : '');
   }
 
+  /// to json(Map<String,dynamic>) of model
   Map<String, dynamic> toJson() {
     return {
       'arch': arch,

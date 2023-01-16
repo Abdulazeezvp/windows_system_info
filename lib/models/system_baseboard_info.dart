@@ -1,7 +1,7 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
+///base board information
 class BaseBoardInfo extends WindowsSystemInformation {
-  ///base board information
   @override
   List<Object?> get props => [
         manufacturer,
@@ -14,12 +14,22 @@ class BaseBoardInfo extends WindowsSystemInformation {
   final String serial;
   final String version;
 
+  /// manufacturer,
+  ///
+  /// model,
+  ///
+  /// serial,
+  ///
+  /// version,
+  ///
   BaseBoardInfo({
     required this.manufacturer,
     required this.model,
     required this.serial,
     required this.version,
   });
+
+  /// convert from json return BaseBoardInfo
   static BaseBoardInfo fromJson(Map<String, dynamic> json) {
     return BaseBoardInfo(
       manufacturer: json['manufacturer'] ??
