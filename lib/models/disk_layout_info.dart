@@ -86,7 +86,7 @@ class DiskLayoutInfo extends WindowsSystemInformation {
     required this.tracksPerCylinder,
     required this.type,
   });
-  
+
   /// convert from json return list of DiskLayoutInfo
   static List<DiskLayoutInfo> fromJson(Map<String, dynamic> json) {
     Map<String, dynamic> diskLayoutData = json['disklayout'] ?? {};

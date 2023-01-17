@@ -2,8 +2,6 @@ import 'package:windows_system_info/models/windows_system_info.dart';
 
 /// system chassis information, like manufacturer,type, model
 class ChassisInfo extends WindowsSystemInformation {
-
-
   @override
   List<Object?> get props => [
         manufacturer,
@@ -24,17 +22,17 @@ class ChassisInfo extends WindowsSystemInformation {
   ///system chassis information
   ///
   /// manufacturer: ""
-  /// 
+  ///
   /// model: ""
-  /// 
+  ///
   /// serial: ""
-  /// 
+  ///
   /// sku: ""
-  /// 
+  ///
   /// type: "Laptop"
-  /// 
+  ///
   /// version: ""
-  /// 
+  ///
   ChassisInfo({
     required this.manufacturer,
     required this.model,
@@ -72,7 +70,7 @@ class ChassisInfo extends WindowsSystemInformation {
     );
   }
 
-/// convert to json
+  /// convert to json
   Map<String, dynamic> toJson() {
     return {
       'manufacturer': manufacturer,

@@ -30,29 +30,29 @@ class MemoryInfo extends WindowsSystemInformation {
   final int voltageMin;
 
   /// Example:
-  /// 
+  ///
   /// bank: "BANK 0"
-  /// 
+  ///
   /// clockSpeed: 0
-  /// 
+  ///
   /// formFactor: "SODIMM"
-  /// 
+  ///
   /// manufacturer: "80AD"
-  /// 
+  ///
   /// partNum: "XXXXXXXXXX-PB"
-  /// 
+  ///
   /// serialNum: "0F421A69"
-  /// 
+  ///
   /// size: 4294967296
-  /// 
+  ///
   /// type: "DDR3"
-  /// 
+  ///
   /// voltageConfigured: 0
-  /// 
+  ///
   /// voltageMax: 0
-  /// 
+  ///
   /// voltageMin: 0
-  /// 
+  ///
   MemoryInfo({
     required this.bank,
     required this.clockSpeed,

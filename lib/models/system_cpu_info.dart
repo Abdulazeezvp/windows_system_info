@@ -1,8 +1,7 @@
 import 'package:windows_system_info/models/windows_system_info.dart';
 
-/// system cpu information 
+/// system cpu information
 class CpuInfo extends WindowsSystemInformation {
- 
   @override
   List<Object?> get props => [
         brand,
@@ -29,30 +28,30 @@ class CpuInfo extends WindowsSystemInformation {
   final String stepping;
   final String vendor;
 
- /// brand: "Core™ i5 M 560"
- /// 
+  /// brand: "Core™ i5 M 560"
+  ///
   /// cores: "4"
-  /// 
+  ///
   /// family: "6"
-  /// 
+  ///
   /// manufacturer: "Intel®"
-  /// 
+  ///
   /// model: "37"
-  /// 
+  ///
   /// physicalCores: "2"
-  /// 
+  ///
   /// processors: 1
-  /// 
+  ///
   /// revision: ""
-  /// 
+  ///
   /// socket: "CPU 1"
-  /// 
+  ///
   /// speed: "2.67"
-  /// 
+  ///
   /// stepping: "5"
-  /// 
+  ///
   /// vendor: "GenuineIntel"
-  /// 
+  ///
   CpuInfo({
     required this.brand,
     required this.cores,
@@ -115,7 +114,7 @@ class CpuInfo extends WindowsSystemInformation {
     );
   }
 
-///convert to json
+  ///convert to json
   Map<String, dynamic> toJson() {
     return {
       'brand': brand,
