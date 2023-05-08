@@ -99,7 +99,7 @@ class DiskLayoutInfo extends WindowsSystemInformation {
                   0,
           device: "",
           firmwareRevision: diskLayoutData['$i']['FirmwareRevision'],
-          interfaceType: diskLayoutData['$i']['BusType'],
+          interfaceType: diskLayoutData['$i']['BusType']??'',
           name: diskLayoutData['$i']['Caption'],
           sectorsPerTrack: int.tryParse(
                   diskLayoutData['$i']['SectorsPerTrack'].toString()) ??
@@ -120,7 +120,7 @@ class DiskLayoutInfo extends WindowsSystemInformation {
           tracksPerCylinder: int.tryParse(
                   diskLayoutData['$i']['TracksPerCylinder'].toString()) ??
               0,
-          type: diskLayoutData['$i']['MediaType'],
+          type: diskLayoutData['$i']['MediaType']??'',
         );
 
         diskLayoutList.add(disk);

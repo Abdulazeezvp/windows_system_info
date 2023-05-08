@@ -26,7 +26,21 @@ Windows
 | system | SystemInfo? |  will return basic system information, like manufacturer etc... |
 | os | OsInfo? | will return operating system information, like version of windows, build etc... |
 | bios | BiosInfo? |  return bios information |
-
+# Enums (WindowsSystemInfoFeat)
+| Name         | Desc  |
+| ------------- | ----- |
+| all     |default, all information |
+| diskLayout     | disklayout information |
+| username     |only username |
+| gpu     | gpu and display |
+| memory     | memory details |
+| network     | network details |
+| baseboard     | baseboard details |
+| chassis     | chassis details |
+| cpu     | cpu details |
+| system     | system details |
+| bios     | bios details |
+| os     | os details |
 
 ## Getting started
 
@@ -40,7 +54,7 @@ import 'package:windows_system_info/windows_system_info.dart';
 
 3. initialize
 ```dart
-await WindowsSystemInfo.initWindowsInfo();
+await WindowsSystemInfo.initWindowsInfo(requiredValues: [WindowsSystemInfoFeat.cpu]);
 ```
 
 4. get values using getter
