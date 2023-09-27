@@ -289,7 +289,7 @@ class GeneralHelper {
               ? true
               : false;
     }
-    for (var i = 0; i < basicDisplayParamsData.length; i++) {
+    for (var i = 0; i < formsDataAllScreens.length; i++) {
       if (i < dSectionData.length &&
           dSectionData.indexWhere((element) => basicDisplayParamsData[i]
                       ['InstanceName']
