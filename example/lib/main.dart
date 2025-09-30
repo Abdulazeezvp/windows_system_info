@@ -37,7 +37,7 @@ class _ExampleWinodwSDetailsAppState extends State<ExampleWinodwSDetailsApp> {
   }
 
   Future<void> initInfo() async {
-    await WindowsSystemInfo.initWindowsInfo();
+    await WindowsSystemInfo.initWindowsInfo(requiredValues:[WindowsSystemInfoFeat.cpu]);
     if (await WindowsSystemInfo.isInitilized) {
       setState(() {
         _cpuInfo = WindowsSystemInfo.cpu;
@@ -58,6 +58,12 @@ class _ExampleWinodwSDetailsAppState extends State<ExampleWinodwSDetailsApp> {
                 Text('CPU Manufacturer : ${_cpuInfo?.manufacturer}'),
                 Text('CPU Model : ${_cpuInfo?.model}'),
                 Text('CPU Cores : ${_cpuInfo?.cores}'),
+                Text('CPU temp : ${WindowsSystemInfo.cpuTemperature}'),
+                Text('CPU load : ${WindowsSystemInfo.cpuLoad}'),
+                Text('GPU temp : ${WindowsSystemInfo.gpuTemperature}'),
+                Text('GPU load : ${WindowsSystemInfo.gpuLoad}'),
+                Text('total memory : ${WindowsSystemInfo.memoryTotal}'),
+                Text('memory Load : ${WindowsSystemInfo.memoryLoad}'),
               ]
             : const [Center(child: CircularProgressIndicator())],
       ),

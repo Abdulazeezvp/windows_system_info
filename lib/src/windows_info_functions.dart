@@ -12,6 +12,7 @@ import 'package:windows_system_info/models/system_cpu_info.dart';
 import 'package:windows_system_info/models/system_info.dart';
 import 'package:windows_system_info/models/system_os_info.dart';
 import 'package:windows_system_info/models/systrem_bios_info.dart';
+import 'package:windows_system_info/src/ffi/cpu_live_info.dart';
 import 'package:windows_system_info/src/general_helper.dart';
 
 /// windows system info enums
@@ -69,6 +70,43 @@ class WindowsSystemInfo {
   static String get userName {
     return _systemUserName.split('\\').last;
   }
+
+  ///get system temperature
+  ///
+  ///
+  ///
+  static double get cpuTemperature => CpuLiveInfo().getCpuTemperature();
+
+  ///get cpu load
+  ///
+  ///
+  ///
+  static double get cpuLoad => CpuLiveInfo().getCpuLoad();
+  ///get gpu temperature
+  ///
+  ///
+  ///
+  static double get gpuTemperature => CpuLiveInfo().getGpuTemperature();
+  ///get gpu load
+  ///
+  ///
+  ///
+  static double get gpuLoad => CpuLiveInfo().getGpuLoad();
+  ///get Memory Used
+  ///
+  ///
+  ///
+  static double get memoryUsed => CpuLiveInfo().getMemoryUsed();
+  ///get total memory
+  ///
+  ///
+  ///
+  static double get memoryTotal => CpuLiveInfo().getMemoryTotal();
+  ///get  memory load
+  ///
+  ///
+  ///
+  static double get memoryLoad => CpuLiveInfo().getMemoryLoad();
 
   ///will get null if not intilsed,
   /// will get complete info of windows device

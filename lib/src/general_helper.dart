@@ -166,11 +166,17 @@ class GeneralHelper {
     List<Map<String, dynamic>> mergedObject = [];
     Map<String, dynamic> disklayout = {};
     for (var i = 0; i < diskDrive.length; i++) {
+      var drive = diskDrive[i];
+      var serial = drive['SerialNumber']?.toString().toLowerCase().trim() ?? "";
+      var idx = physicalDisk.indexWhere((element) =>
+        element['SerialNumber']?.toString().toLowerCase().trim() == serial);
+      Map<String, dynamic> physical = {};
+      if (idx != -1) {
+        physical = physicalDisk[idx];
+      }
       mergedObject.add({
-        ...diskDrive[i],
-        ...physicalDisk[physicalDisk.indexWhere((element) =>
-            element['SerialNumber'].toString().toLowerCase().trim() ==
-            diskDrive[i]['SerialNumber'].toString().toLowerCase().trim())],
+        ...drive,
+        ...physical,
       });
       disklayout[i.toString()] = mergedObject[i];
       disklayout[i.toString()]['Status'] =

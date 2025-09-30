@@ -1,0 +1,11 @@
+<linker>
+  <assembly fullname="LibreHardwareMonitorLib">
+    <type fullname="LibreHardwareMonitor.Hardware.Computer" preserve="all"/>
+    <type fullname="LibreHardwareMonitor.Hardware.IHardware" preserve="all"/>
+    <type fullname="LibreHardwareMonitor.Hardware.ISensor" preserve="all"/>
+    <type fullname="LibreHardwareMonitor.Hardware.SensorType" preserve="all"/>
+  </assembly>
+
+    <assembly fullname="System.IO.FileSystem.AccessControl" preserve="all"/>
+    <assembly fullname="System.Security.AccessControl" preserve="all"/>
+</linker>
